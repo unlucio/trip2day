@@ -1,23 +1,26 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
+import FacebookLogin from './facebook'
 
 export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+        <title>Trip2Day</title>
+        <link rel="icon" href="/charizard.ico" />
+      </Head>      
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          Welcome to Trip2Day
         </h1>
 
         <p className={styles.description}>
           Get started by editing{' '}
           <code className={styles.code}>pages/index.js</code>
         </p>
+
+        <FacebookLogin />
 
         <div className={styles.grid}>
           <a href="https://nextjs.org/docs" className={styles.card}>
