@@ -1,26 +1,45 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import FacebookLogin from './facebook'
+import { signIn, signOut, useSession } from 'next-auth/client'
 
 export default function Home() {
+  const [session, loading] = useSession()
   return (
     <div className={styles.container}>
       <Head>
         <title>Trip2Day</title>
         <link rel="icon" href="/charizard.ico" />
-      </Head>      
+      </Head>
 
       <main className={styles.main}>
         <h1 className={styles.title}>
           Welcome to Trip2Day
         </h1>
 
+        <>
+          {!session && <>
+            Not signed in <br />
+            <button onClick={signIn}>Sign in</button>
+          </>}
+          {session && <>
+            <div style={{
+                width: '400px',
+                margin: 'auto',
+                background: '#f4f4f4',
+                padding: '20px',
+                color: '#000'
+            }}>
+                <img src={session.user.image} alt={session.user.name} />
+                <h2>Welcome {session.user.name}!</h2>
+            </div> <br />
+            <button onClick={signOut}>Sign out</button>
+          </>}
+        </>
+
         <p className={styles.description}>
           Get started by editing{' '}
           <code className={styles.code}>pages/index.js</code>
         </p>
-
-        <FacebookLogin />
 
         <div className={styles.grid}>
           <a href="https://nextjs.org/docs" className={styles.card}>
