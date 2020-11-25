@@ -1,0 +1,19 @@
+.navbar {
+    top: 0;
+    width: 100%;
+  }
+  
+.navbar a {
+    background-color: black;
+    font: 1.5em "Lucida Console", Monaco, monospace;
+    float: left;
+    display: block;
+    color: white;
+    padding: 15px 20px;
+    text-decoration: none;
+  }
+
+.navbar a:hover {
+    background: rgb(26, 255, 189);
+    color: black;
+  }
