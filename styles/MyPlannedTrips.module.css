@@ -1,0 +1,14 @@
+.flexcontainer {
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    
+}
+
+.foto {
+    width: 18rem;
+    align-items: center;
+    
+
+
+}
