@@ -1,19 +1,39 @@
 import { Navbar, Nav, Button, Form, FormControl } from 'react-bootstrap'
+import { signIn, signOut, useSession } from 'next-auth/client'
 import Link from 'next/link'
 
 export default function TopNavBar() {
-    return ( <>
-<Navbar bg="primary" variant="light" fixed="top" overflow="hidden">
-    <Navbar.Brand href="#home"><img src="/trip2day_logo.png" width="200px"overflow="hidden"></img></Navbar.Brand>
-    <Nav className="mr-auto">
-      <Nav.Link href="#home">Home</Nav.Link>
-      <Nav.Link href="#features">Features</Nav.Link>
-      <Nav.Link href="#pricing">Pricing</Nav.Link>
-    </Nav>
-    <Form inline>
-      <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-      <Button variant="outline-info">Search</Button>
-    </Form>
-  </Navbar>
+  const [session, loading] = useSession();
+  return (<>
+
+    <Navbar bg="primary" sticky="top">
+      <Navbar.Brand href="#home">
+        <img
+          src="/trip2day_logo.png"
+          height="30"
+          className="d-inline-block align-top"
+          alt="Trip2Day Logo"
+        />
+      </Navbar.Brand>
+      <Navbar.Toggle />
+      <Navbar.Collapse className="justify-content-end">
+        <Navbar inline>
+          {!session && (
+            <>
+              <p>Not signed in</p>
+              <button onClick={() => signIn("facebook", { callbackUrl: "http://localhost:3000/MyTravelBook" })
+                  }> Sign in </button></>)}
+          {session && (
+            <>
+                <p>Signed in as {session.user.name}!</p>
+              <button onClick={() => signOut({ callbackUrl: "http://localhost:3000" })
+                }> Sign out </button></>)} 
+        </Navbar>
+      </Navbar.Collapse>
+    </Navbar>
   </>
-    )};
+
+
+
+  )
+};

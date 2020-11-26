@@ -1,0 +1,33 @@
+.contenitore {
+    display:flex;
+}
+
+.images{
+border-radius: 50%;
+    height: auto;
+    left: 25%;
+    top: 50%;
+}
+
+.Description {
+    padding: 5px;
+    width: 500px;
+    word-wrap: break-word;
+    height: auto;
+    left: 45%;
+    top: 10%;
+}
+
+.ProfileName {
+    background-color: #74D8A2;
+    color: white;
+}
+
+.BottonToTrip {
+    height: auto;
+    left: 53%;
+    top: 30%;
+    border-radius: 12px;
+    background-color: #74D8A2;
+    border: 2px solid #20703C;
+}
