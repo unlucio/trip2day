@@ -1,25 +1,71 @@
 import TopNavBar from "./TopNavbar";
-import {Image, Card, Button} from 'react-bootstrap'
+import {
+  Image,
+  Modal,
+  Button,
+  Nav,
+  FormControl,
+  InputGroup,
+} from "react-bootstrap";
 
 function Suggestions() {
-    return(
+  return (
     <div>
-        <TopNavBar />
- 
-        <Image src="trip2day_logo.png" width="846px" fluid />
+      <TopNavBar />
+      <Nav variant="tabs" defaultActiveKey="/home">
+        <Nav.Item>
+          <Nav.Link href="./DailyPlanner">DAILY PLANNER</Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link href="./Suggestions">SUGGESTIONS</Nav.Link>
+        </Nav.Item>
+      </Nav>
 
-        <Card style={{ width: '18rem' }}>
-  <Card.Img variant="top" src="holder.js/100px180" />
-  <Card.Body>
-    <Card.Title>Card Title</Card.Title>
-    <Card.Text>
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
-    </Card.Text>
-    <Button variant="primary">Go somewhere</Button>
-  </Card.Body>
-</Card>
-    </div>)
+      <Image src="trip2day_logo.png" width="846px"  />
+
+      <Modal.Dialog>
+        <Modal.Header>
+          <Modal.Title>Name Surname</Modal.Title>
+        </Modal.Header>
+
+        <Modal.Body>
+          <InputGroup>
+            <FormControl aria-label="Text input with radio button" />
+            <FormControl aria-label="Text input with radio button" />
+            <InputGroup.Prepend>
+              <InputGroup.Radio aria-label="Radio button for following text input" />
+            </InputGroup.Prepend>
+          </InputGroup>
+        </Modal.Body>
+
+        <Modal.Footer>
+          <Button variant="secondary">Close</Button>
+          <Button variant="primary">Save suggestions</Button>
+        </Modal.Footer>
+      </Modal.Dialog>
+      
+      <Modal.Dialog>
+        <Modal.Header>
+          <Modal.Title>Name Surname</Modal.Title>
+        </Modal.Header>
+
+        <Modal.Body>
+          <InputGroup>
+            <FormControl aria-label="Text input with radio button" />
+            <FormControl aria-label="Text input with radio button" />
+            <InputGroup.Prepend>
+              <InputGroup.Radio aria-label="Radio button for following text input" />
+            </InputGroup.Prepend>
+          </InputGroup>
+        </Modal.Body>
+
+        <Modal.Footer>
+          <Button variant="secondary">Close</Button>
+          <Button variant="primary">Save suggestions</Button>
+        </Modal.Footer>
+      </Modal.Dialog>
+    </div>
+  );
 }
 
-export default Suggestions
+export default Suggestions;
