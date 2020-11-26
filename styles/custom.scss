@@ -1,5 +1,13 @@
 $theme-colors: (
-  "primary": #E4E4E4,
+  "primary": #e4e4e4,
 );
+.loginPagePhoto {
+  float: left;
+  width: 500px;
+}
+.loginPageComponent {
+  position : relative;
+  float: right;
+}
 
-@import '../scss/bootstrap.scss';
+@import "../scss/bootstrap.scss";
