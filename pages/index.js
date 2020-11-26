@@ -24,7 +24,7 @@ export default function Home() {
               {!session && (
                 <>Not signed in <br />
                   <button onClick={() => signIn("facebook",
-                    { callbackUrl: "http://localhost:3000/MyTravelBook" })}>Sign in</button>
+                    { callbackUrl: "http://localhost:3000/MyTrips" })}>Sign in</button>
                 </>
               )}
               {session && (
