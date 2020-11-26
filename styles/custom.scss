@@ -9,5 +9,12 @@ $theme-colors: (
   position : relative;
   float: right;
 }
+.navbar-text {
+  display: inline-block;
+  margin-bottom: 0px;}
 
-@import "../scss/bootstrap.scss";
+.navbar p {
+  margin-bottom: 0px;
+}
+
+@import '../scss/bootstrap.scss';
