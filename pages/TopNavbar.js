@@ -7,7 +7,7 @@ export default function TopNavBar() {
   return (<>
 
     <Navbar bg="primary" sticky="top">
-      <Navbar.Brand href="#home">
+      <Navbar.Brand href="/">
         <img
           src="/trip2day_logo.png"
           height="30"
