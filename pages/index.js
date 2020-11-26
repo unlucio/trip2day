@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import { signIn, signOut, useSession } from 'next-auth/client'
-import Navbar from './Navbar'
+import TopNavBar from './TopNavbar'
 
 
 export default function Home() {
@@ -15,7 +15,7 @@ export default function Home() {
 
       <main className={styles.main}>
 
-        <Navbar />
+        <TopNavBar />
 
         <h1 className={styles.title}>Welcome to Trip2Day</h1>
 
