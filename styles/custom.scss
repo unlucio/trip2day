@@ -2,4 +2,12 @@ $theme-colors: (
   "primary": #E4E4E4,
 );
 
+.navbar-text {
+  display: inline-block;
+  margin-bottom: 0px;}
+
+.navbar p {
+  margin-bottom: 0px;
+}
+
 @import '../scss/bootstrap.scss';
