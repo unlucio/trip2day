@@ -5,15 +5,9 @@ function Suggestions() {
     return(
     <div>
         <TopNavBar />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
+ 
         <Image src="trip2day_logo.png" width="846px" fluid />
-        <br />
-        <br />
-        <br />
+
         <Card style={{ width: '18rem' }}>
   <Card.Img variant="top" src="holder.js/100px180" />
   <Card.Body>

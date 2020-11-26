@@ -1,4 +1,5 @@
 import TopNavBar from "./TopNavbar";
+import Header from "./Header";
 import { Form, Button, InputGroup, FormControl } from "react-bootstrap";
 import Link from "next/link";
 
@@ -6,10 +7,7 @@ function NewTrip() {
   return (
     <div>
       <TopNavBar />
-      <br />
-      <br />
-      <br />
-      <br />
+      <Header />
 
       <InputGroup className="mb-3">
         <FormControl

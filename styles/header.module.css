@@ -1,6 +1,9 @@
+.contenitore {
+    display:flex;
+}
+
 .images{
 border-radius: 50%;
-position: absolute;
     height: auto;
     left: 25%;
     top: 50%;
@@ -10,8 +13,6 @@ position: absolute;
     padding: 5px;
     width: 500px;
     word-wrap: break-word;
-
-    position: absolute;
     height: auto;
     left: 45%;
     top: 10%;
@@ -23,7 +24,6 @@ position: absolute;
 }
 
 .BottonToTrip {
-    position: absolute;
     height: auto;
     left: 53%;
     top: 30%;
