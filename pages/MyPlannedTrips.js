@@ -1,9 +1,9 @@
-import Navbar from './Navbar'
+import TopNavBar from './TopNavbar'
 
 function MyPlannedTrips() {
     return(
     <div>
-        <Navbar />
+        <TopNavBar />
         <h1>Ciao, sono l'elenco dei tuoi viaggi pianificati</h1>
     </div>
 )}

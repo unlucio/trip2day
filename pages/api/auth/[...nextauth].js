@@ -21,7 +21,7 @@ const options = {
         // Return false to display a default error message
         //   return Promise.resolve(false)
         // You can also Reject this callback with an Error or with a URL:
-        return Promise.reject(new Error("Il Mio Cane")); // Redirect to error page
+        return Promise.reject(new Error("Qualcosa è andato storto")); // Redirect to error page
         //   return Promise.reject('/path/to/redirect')        // Redirect to a URL
       }
     },
