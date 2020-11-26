@@ -1,5 +1,20 @@
 $theme-colors: (
-  "primary": #E4E4E4,
+  "primary": #e4e4e4,
 );
+.loginPagePhoto {
+  float: left;
+  width: 500px;
+}
+.loginPageComponent {
+  position : relative;
+  float: right;
+}
+.navbar-text {
+  display: inline-block;
+  margin-bottom: 0px;}
+
+.navbar p {
+  margin-bottom: 0px;
+}
 
 @import '../scss/bootstrap.scss';
