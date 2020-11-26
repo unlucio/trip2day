@@ -6,7 +6,7 @@ export default function TopNavBar() {
   const [session, loading] = useSession();
   return (<>
 
-    <Navbar bg="primary" fixed="top">
+    <Navbar bg="primary" sticky="top">
       <Navbar.Brand href="#home">
         <img
           src="/trip2day_logo.png"

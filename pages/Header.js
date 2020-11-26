@@ -1,18 +1,10 @@
-import Image from 'react-bootstrap/Image'
+import { Image, Container, Row, Col, Button } from 'react-bootstrap'
 import styles from '../styles/header.module.css'
-import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
-import Button from 'react-bootstrap/Button'
 import Link from 'next/link'
-import NewTrip from './NewTrip'
 
 function Header() {
     return (
-        <div>
-            <br />
-            <br />
-            <br />
+        <div className={styles.contenitore}>
             <Container>
                 <Row>
                     <Col xs={6} md={4}>
