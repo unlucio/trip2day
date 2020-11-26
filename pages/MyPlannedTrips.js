@@ -3,6 +3,7 @@ import Navbar from "./Navbar";
 import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 
+import TopNavBar from './TopNavbar'
 
 function MyPlannedTrips() {
   return (
