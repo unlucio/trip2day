@@ -12,9 +12,11 @@ export default function Home() {
         </Head>
 
         <main>
-          <img class="loginPagePhoto" src="sasha.jpg"></img>
-          <div class="loginPageComponent">
-            <img src="trip2day_logo.png"></img>
+          <div class='media'>
+          <img class="align-self-start mr-3" src="sasha.jpg"></img>
+          <div class="media-body">
+            <div class="mt-0">
+            <img class="" src="trip2day_logo.png"></img>
 
             <h1>Welcome to Trip2Day</h1>
 
@@ -45,6 +47,8 @@ export default function Home() {
               )}
             </>
 
+          </div>
+          </div>
           </div>
         </main>
 
