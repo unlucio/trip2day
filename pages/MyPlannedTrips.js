@@ -3,10 +3,12 @@ import TopNavbar from "./components/TopNavbar";
 import Header from './components/Header'
 import Link from "next/link";
 import { useState } from 'react'
+import { CardViaggioList } from './listCardViaggio'
+import {AddCardViaggio} from './addCardViaggio.js'
 
 
 function MyPlannedTrips() {
-
+  const [list, setList] = useState([]);
   const trip = {
     id: "Tokyo",
     location: "Tokyo",
@@ -63,8 +65,6 @@ function MyPlannedTrips() {
         </Button>
       </ButtonGroup>
 
-
-
       <div className="flexcontainer">
         <form id="input" onSubmit={chooseLocation}>
           <label>choose location</label>
@@ -76,6 +76,7 @@ function MyPlannedTrips() {
         <div>{renderCard()}</div>
 
         <Card className="photo">
+
           <Card.Img variant="top" /><img src="/Tokyo.jpg" width="200px" overflow="hidden"></img>
           <Card.Body>
             <Card.Title>Tokyo</Card.Title>

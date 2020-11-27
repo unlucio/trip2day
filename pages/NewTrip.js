@@ -2,6 +2,7 @@ import { Form, Button, InputGroup, FormControl } from "react-bootstrap";
 import TopNavbar from "./components/TopNavbar";
 import Header from "./components/Header";
 import Link from "next/link";
+import { AddCardViaggio } from "./addCardViaggio";
 
 function NewTrip() {
   return (
@@ -18,6 +19,7 @@ function NewTrip() {
           <Button variant="outline-secondary">
             <Link href="./Suggestions">Send request of suggestions</Link>
           </Button>
+          <AddCardViaggio />
         </InputGroup.Append>
       </InputGroup>
     </div>
