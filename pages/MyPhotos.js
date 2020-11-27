@@ -1,13 +1,13 @@
+
+import { Button, ButtonGroup } from "react-bootstrap";
+import TopNavbar from './components/TopNavbar'
+import Header from './components/Header'
 import Link from "next/link";
-import Button from "react-bootstrap/Button";
-import ButtonGroup from "react-bootstrap/ButtonGroup";
-import TopNavBar from './TopNavbar'
-import Header from './Header'
 
 function MyPhotos() {
     return (
         <div>
-            <TopNavBar />
+            <TopNavbar />
             <Header />
             <h1>Ecco le tue foto</h1>
             <ButtonGroup aria-label="Basic example">

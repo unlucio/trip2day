@@ -1,14 +1,14 @@
-import TopNavBar from "./TopNavbar";
-import Header from "./Header";
 import { Form, Button, InputGroup, FormControl } from "react-bootstrap";
+import TopNavbar from "./components/TopNavbar";
+import Header from "./components/Header";
 import Link from "next/link";
+import { AddCardViaggio } from "./addCardViaggio";
 
 function NewTrip() {
   return (
     <div>
-      <TopNavBar />
+      <TopNavbar />
       <Header />
-
       <InputGroup className="mb-3">
         <FormControl
           placeholder="Choose your destination"
@@ -19,6 +19,7 @@ function NewTrip() {
           <Button variant="outline-secondary">
             <Link href="./Suggestions">Send request of suggestions</Link>
           </Button>
+          <AddCardViaggio />
         </InputGroup.Append>
       </InputGroup>
     </div>

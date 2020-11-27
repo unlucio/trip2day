@@ -9,11 +9,44 @@ $theme-colors: (
   margin-bottom: 0px;
 }
 
-.col {
-  text-align: center;
-  justify-content: center;
-  margin-left: -15px;
-  margin-right: -15px;
+.loginformcontainer {
+  background-color: #e4e4e4 ;
+  width: 50%;
 }
 
-@import '../scss/bootstrap.scss';
+.loginform {
+  display: flex;
+
+}
+
+.logo {
+  padding-top: 15%;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 10%;
+  width: 100%;
+}
+
+.logincover {
+  height: 100vh;
+  width:50%;
+  text-align: center;
+  justify-content: center;
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+.flexcontainer {
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;  
+}
+
+.photo {
+  width: 18rem;
+  align-items: center;
+  
+}
+
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
