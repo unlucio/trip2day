@@ -1,14 +1,13 @@
+import { Button, ButtonGroup } from "react-bootstrap";
+import TopNavbar from './components/TopNavbar'
+import Header from './components/Header'
 import Link from "next/link";
-import Button from "react-bootstrap/Button";
-import ButtonGroup from "react-bootstrap/ButtonGroup";
-import TopNavBar from './TopNavbar'
-import Header from './Header'
 
 function MyTrips() {
   return (
     <div>
-       <TopNavBar />
-            <Header />
+      <TopNavbar />
+      <Header />
       <h1>Ciao, sono l'elenco dei tuoi viaggi</h1>
       <ButtonGroup aria-label="Basic example">
         <Button variant="secondary">My Trips</Button>
