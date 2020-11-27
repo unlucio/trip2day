@@ -1,10 +1,7 @@
 import Link from "next/link";
 import TopNavBar from "./TopNavbar";
-import Button from "react-bootstrap/Button";
-import ButtonGroup from "react-bootstrap/ButtonGroup";
-import Card from "react-bootstrap/Card";
+import { Button, ButtonGroup, Card } from "react-bootstrap";
 import Header from './Header'
-import styles from '../styles/MyPlannedTrips.module.css'
 import { useState } from 'react'
 
 function MyPlannedTrips() {
@@ -33,7 +30,7 @@ function MyPlannedTrips() {
     function renderCard() {
       return cardViaggio.map((cardViaggio, index) => {
         const {location, photo} = cardViaggio
-        return( <Card className={styles.foto} key={index}>
+        return( <Card className="photo" key={index}>
           <Card.Img variant="top" /><img src={photo} width="200px" overflow="hidden"></img>
           <Card.Body>
             <Card.Title>{location}</Card.Title>
@@ -67,7 +64,7 @@ function MyPlannedTrips() {
 
    
 
-      <div className={styles.flexcontainer}>
+      <div className="flexcontainer">
       <form id="input" onSubmit={chooseLocation}>
         <label>choose location</label>
         <input type="text" placeholder="la 1 la 2 o la 3" value={value} onChange={handleChange} />
@@ -77,7 +74,7 @@ function MyPlannedTrips() {
       <button onClick={addCard}>Aggiungi viaggio</button>
     <div>{renderCard()}</div>
 
-        <Card className={styles.foto}>
+        <Card className="photo">
           <Card.Img variant="top" /><img src="/Tokyo.jpg" width="200px" overflow="hidden"></img>
           <Card.Body>
             <Card.Title>Tokyo</Card.Title>
