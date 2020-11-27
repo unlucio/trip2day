@@ -1,10 +1,10 @@
-import TopNavBar from "./TopNavbar";
 import { Nav, Table } from "react-bootstrap";
+import TopNavbar from "./TopNavbar";
 
 function DailyPlanner() {
   return (
     <div>
-      <TopNavBar />
+      <TopNavbar />
       <Nav variant="tabs" defaultActiveKey="/home">
         <Nav.Item>
           <Nav.Link href="./DailyPlanner">DAILY PLANNER</Nav.Link>
