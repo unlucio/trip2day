@@ -19,7 +19,7 @@ function Header() {
 
                 <>
 
-                    <Button className={styles.BottonToTrip} variant="success"> <Link href='./NewTrip'> PLAN YOUR NEXT TRIP </Link> </Button>{''}
+                    <Button className={styles.ButtonToTrip} variant="success"> <Link href='./NewTrip'> PLAN YOUR NEXT TRIP </Link> </Button>{''}
 
                 </>
             </div>
