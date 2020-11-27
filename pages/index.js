@@ -12,9 +12,6 @@ export default function Home() {
 
         <LoginPage />
      
-        <footer>
-          <p>ciao, sono il copyright del sito</p>
-        </footer>
     </>
   );
 }

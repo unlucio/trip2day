@@ -1,5 +1,5 @@
 import { signIn, signOut, useSession } from "next-auth/client";
-import { Image, Container, Row, Col } from "react-Bootstrap"
+import { Container, Row, Col } from "react-Bootstrap"
 
 function LoginPage() {
     const [session, loading] = useSession();
@@ -8,8 +8,11 @@ function LoginPage() {
 
 <Container fluid>
   <Row>
-    <Image src="loginpage.jpg" fluid width="50%"/>
-    <Col> <img src="trip2day_logo.png" width="100%" /><div>
+    <Col className="logincover" style={{backgroundImage:'url("loginpage.jpg")'}}/>
+    <div className="loginformcontainer"> 
+    <img className="logo" src="trip2day_logo.png" width="100%" />
+    
+    <div className="loginform">
         {!session && (
                 <>Not signed in <br />
                   <button onClick={() => signIn("facebook",
@@ -33,8 +36,12 @@ function LoginPage() {
                   <button onClick={() =>
                     signOut({ callbackUrl: "http://localhost:3000" })}>Sign out</button>
                 </>
-              )}</div>
-    </Col>
+              )}           
+    </div>
+    <footer>
+        <p>ciao, sono il copyright del sito</p>
+    </footer>
+    </div>
   </Row>
 </Container>
 
