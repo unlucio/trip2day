@@ -9,4 +9,11 @@ $theme-colors: (
   margin-bottom: 0px;
 }
 
+.col {
+  text-align: center;
+  justify-content: center;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
 @import '../scss/bootstrap.scss';
