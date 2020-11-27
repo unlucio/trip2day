@@ -1,8 +1,7 @@
-import { Navbar, Nav, Button, Form, FormControl } from 'react-bootstrap'
+import { Navbar, Nav } from 'react-bootstrap'
 import { signIn, signOut, useSession } from 'next-auth/client'
-import Link from 'next/link'
 
-export default function TopNavBar() {
+export default function TopNavbar() {
   const [session, loading] = useSession();
   return (<>
 
@@ -15,6 +14,10 @@ export default function TopNavBar() {
           alt="Trip2Day Logo"
         />
       </Navbar.Brand>
+      <Nav className="mr-auto">
+        <Nav.Link href="/MyTrips">My Trips</Nav.Link>
+        <Nav.Link href="/MyFriendsList">Friends</Nav.Link>
+      </Nav>
       <Navbar.Toggle />
       <Navbar.Collapse className="justify-content-end">
         <Navbar inline>
@@ -22,12 +25,12 @@ export default function TopNavBar() {
             <>
               <p>Not signed in</p>
               <button onClick={() => signIn("facebook", { callbackUrl: "http://localhost:3000/MyTravelBook" })
-                  }> Sign in </button></>)}
+              }> Sign in </button></>)}
           {session && (
             <>
-                <p>Signed in as {session.user.name}!</p>
+              <p>Signed in as {session.user.name}!</p>
               <button onClick={() => signOut({ callbackUrl: "http://localhost:3000" })
-                }> Sign out </button></>)} 
+              }> Sign out </button></>)}
         </Navbar>
       </Navbar.Collapse>
     </Navbar>

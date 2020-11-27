@@ -1,17 +1,10 @@
-import TopNavBar from "./TopNavbar";
-import {
-  Image,
-  Modal,
-  Button,
-  Nav,
-  FormControl,
-  InputGroup,
-} from "react-bootstrap";
+import { Image, Modal, Button, Nav, FormControl, InputGroup } from "react-bootstrap";
+import TopNavbar from "./components/TopNavbar";
 
 function Suggestions() {
   return (
     <div>
-      <TopNavBar />
+      <TopNavbar />
       <Nav variant="tabs" defaultActiveKey="/home">
         <Nav.Item>
           <Nav.Link href="./DailyPlanner">DAILY PLANNER</Nav.Link>
@@ -21,7 +14,7 @@ function Suggestions() {
         </Nav.Item>
       </Nav>
 
-      <Image src="trip2day_logo.png" width="846px"  />
+      <Image src="trip2day_logo.png" width="846px" />
 
       <Modal.Dialog>
         <Modal.Header>
@@ -43,7 +36,7 @@ function Suggestions() {
           <Button variant="primary">Save suggestions</Button>
         </Modal.Footer>
       </Modal.Dialog>
-      
+
       <Modal.Dialog>
         <Modal.Header>
           <Modal.Title>Name Surname</Modal.Title>
