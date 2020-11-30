@@ -7,9 +7,22 @@ app.use(cors());
 
 const suggestion = [
     {
+        location : "Tokyo",
         name : "Geralt",
         landmark: "Gwent",
         comment: "Meglio di mia figlia"
+    },
+    {
+        location : "Tokyo",
+        name : "Simp",
+        landmark: "Waifu",
+        comment: "Furries o Scalies"
+    },
+    {
+        location : "Parigi",
+        name : "Jean-Claude",
+        landmark: "Bidet",
+        comment: "Non riesco a trovarlo"
     }
 ]
 
@@ -44,22 +57,23 @@ app.get("/", (req, res) => {
 
 app.get(`/${trip[1].id}`, (req, res) =>{ 
     res.json({
-        location: trip[1].location
+        location: trip[1].location,
+
     })
 
 }
 )
 
-app.post("/", (req, res) => {
-    trip.push({
-        id: "Londra",
-        location: "Londra",
-        photo: "Londra.jpg"
-    })
-    res.json({
-        cardViaggio: trip,
-    })
-})
+// app.post("/", (req, res) => {
+//     trip.push({
+//         id: "Londra",
+//         location: "Londra",
+//         photo: "Londra.jpg"
+//     })
+//     res.json({
+//         cardViaggio: trip,
+//     })
+// })
 app.all((req, res) => {
     res.json({ error: "Sei un coglione!!" });
 })
