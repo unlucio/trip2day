@@ -1,5 +1,7 @@
 import { Nav, Table } from "react-bootstrap";
-import TopNavbar from "./TopNavbar";
+import TopNavbar from "./components/TopNavbar";
+import WeeklyScheduler from 'react-week-scheduler';
+import 'react-week-scheduler/react-week-scheduler.css';
 
 function DailyPlanner() {
   return (
@@ -48,8 +50,24 @@ function DailyPlanner() {
           </tr>
         </tbody>
       </Table>
+     
+
+
     </div>
+    
+
   );
+
+ 
+
+
 }
 
 export default DailyPlanner;
+
+
+
+  
+
+
+ 
