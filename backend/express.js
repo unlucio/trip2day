@@ -25,7 +25,13 @@ const trip = [
         id: "Tokyo",
         location: "Tokyo",
         photo: "Tokyo.jpg"
+    },
+    {
+        id: "Parigi",
+        location: "Parigi",
+        photo: "Tokyo.jpg"
     }
+
 ]
 
 app.get("/", (req, res) => {
@@ -35,6 +41,14 @@ app.get("/", (req, res) => {
         friendList: friend
     })
 })
+
+app.get(`/${trip[1].id}`, (req, res) =>{ 
+    res.json({
+        location: trip[1].location
+    })
+
+}
+)
 
 app.post("/", (req, res) => {
     trip.push({
