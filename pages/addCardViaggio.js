@@ -5,6 +5,12 @@ import Link from "next/link";
 
 export const AddCardViaggio = (props) => {
     const [list, setList] = useState([]);
+    const [value, setValue] = useState('')
+
+    function handleChange(event) {
+        setValue(event.target.value);
+    }
+
 
     useEffect(() => {
         fetch("http://localhost:3001/").then((response) => {
@@ -17,6 +23,7 @@ export const AddCardViaggio = (props) => {
     return (
         <div>
             <Button
+                onChange={handleChange}
                 onClick={() => {
                     fetch("http://localhost:3001/", { method: "POST" }).then(
                         (response) => {
@@ -29,7 +36,7 @@ export const AddCardViaggio = (props) => {
                 }}
             >
                 <Link href="./MyPlannedTrips">Inizia il tuo nuovo viaggio!1</Link>
-      </Button>
+            </Button>
         </div>
     );
 };

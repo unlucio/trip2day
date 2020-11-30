@@ -5,17 +5,34 @@ const app = express();
 const port = 3001;
 app.use(cors());
 
+const suggestion = [
+    {
+        name : "Geralt",
+        landmark: "Gwent",
+        comment: "Meglio di mia figlia"
+    }
+]
+
+const friend = [
+    {
+        name : "Geralt",
+        surname : "of Rivia"
+    }
+]
+
 const trip = [
     {
         id: "Tokyo",
         location: "Tokyo",
-        photo: "../public/Tokyo.jpg"
+        photo: "Tokyo.jpg"
     }
 ]
 
 app.get("/", (req, res) => {
     res.json({
         cardViaggio: trip,
+        friendSuggestion: suggestion,
+        friendList: friend
     })
 })
 
@@ -23,7 +40,7 @@ app.post("/", (req, res) => {
     trip.push({
         id: "Londra",
         location: "Londra",
-        photo: "../public/Londra.jpg"
+        photo: "Londra.jpg"
     })
     res.json({
         cardViaggio: trip,
