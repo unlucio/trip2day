@@ -13,7 +13,7 @@ export const CardViaggioList = ({list}) => {
     }, []);
     return (
         <div>
-            {list.map((o, i) => {
+            {cardList.map((o, i) => {
                 return (
                     <div key={i}>
                         {o.location} -- {o.photo}
