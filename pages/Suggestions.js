@@ -1,62 +1,58 @@
-import { Image, Modal, Button, Nav, FormControl, InputGroup } from "react-bootstrap";
+import { Image, Modal, Button, Nav, FormControl, InputGroup, Dropdown} from "react-bootstrap";
 import TopNavbar from "./components/TopNavbar";
+import { useState } from "react";
 
 function Suggestions() {
+  function renderSuggestion() {
+    return museumSuggestions.map((museumSuggestions, index) => {
+      const { Author, sug } = museumSuggestions;
+      //return <h1>{Author}</h1>;
+      console.log(Author);
+    });
+  }
+
+  const museumSuggestions = [
+    {
+      id: 1,
+      Author: "A",
+      sug: "Louvre",
+    },
+    {
+      id: 2,
+      Author: "B",
+      sug: "Musei Vaticani",
+    },
+    {
+      id: 3,
+      Author: "C",
+      sug: "British Museum",
+    },
+  ];
+
+  function handleChange(event) {
+    setValue(event.target.value);
+  }
+  const [value, setValue] = useState("");
+
   return (
     <div>
       <TopNavbar />
-      <Nav variant="tabs" defaultActiveKey="/home">
-        <Nav.Item>
-          <Nav.Link href="./DailyPlanner">DAILY PLANNER</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link href="./Suggestions">SUGGESTIONS</Nav.Link>
-        </Nav.Item>
-      </Nav>
 
-      <Image src="trip2day_logo.png" width="846px" />
+      <p>Ti serve un suggerimento? Scegli tra queste categorie:</p>
+      <Dropdown>
+        <Dropdown.Toggle variant="success" id="dropdown-basic">
+          Categories
+        </Dropdown.Toggle>
 
-      <Modal.Dialog>
-        <Modal.Header>
-          <Modal.Title>Name Surname</Modal.Title>
-        </Modal.Header>
-
-        <Modal.Body>
-          <InputGroup>
-            <FormControl aria-label="Text input with radio button" />
-            <FormControl aria-label="Text input with radio button" />
-            <InputGroup.Prepend>
-              <InputGroup.Radio aria-label="Radio button for following text input" />
-            </InputGroup.Prepend>
-          </InputGroup>
-        </Modal.Body>
-
-        <Modal.Footer>
-          <Button variant="secondary">Close</Button>
-          <Button variant="primary">Save suggestions</Button>
-        </Modal.Footer>
-      </Modal.Dialog>
-
-      <Modal.Dialog>
-        <Modal.Header>
-          <Modal.Title>Name Surname</Modal.Title>
-        </Modal.Header>
-
-        <Modal.Body>
-          <InputGroup>
-            <FormControl aria-label="Text input with radio button" />
-            <FormControl aria-label="Text input with radio button" />
-            <InputGroup.Prepend>
-              <InputGroup.Radio aria-label="Radio button for following text input" />
-            </InputGroup.Prepend>
-          </InputGroup>
-        </Modal.Body>
-
-        <Modal.Footer>
-          <Button variant="secondary">Close</Button>
-          <Button variant="primary">Save suggestions</Button>
-        </Modal.Footer>
-      </Modal.Dialog>
+        <Dropdown.Menu>
+          <Dropdown.Item onChange={handleChange} onclick={renderSuggestion()}>Museums</Dropdown.Item>
+          <Dropdown.Item>Restaurants</Dropdown.Item>
+          <Dropdown.Item>Hotels</Dropdown.Item>
+          <Dropdown.Item>Best places to discover</Dropdown.Item>
+          <Dropdown.Item>Tours to takes</Dropdown.Item>
+        </Dropdown.Menu>
+      </Dropdown>
+      
     </div>
   );
 }

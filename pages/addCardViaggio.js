@@ -1,8 +1,16 @@
 import { CardViaggioList } from "./listCardViaggio";
 import React, { useEffect, useState } from "react";
+import { Button } from "react-bootstrap";
+import Link from "next/link";
 
 export const AddCardViaggio = (props) => {
     const [list, setList] = useState([]);
+    const [value, setValue] = useState('')
+
+    function handleChange(event) {
+        setValue(event.target.value);
+    }
+
 
     useEffect(() => {
         fetch("http://localhost:3001/").then((response) => {
@@ -14,8 +22,8 @@ export const AddCardViaggio = (props) => {
 
     return (
         <div>
-            <CardViaggioList list={list} />
-            <button
+            <Button
+                onChange={handleChange}
                 onClick={() => {
                     fetch("http://localhost:3001/", { method: "POST" }).then(
                         (response) => {
@@ -27,8 +35,8 @@ export const AddCardViaggio = (props) => {
                     );
                 }}
             >
-                Inizia il tuo nuovo viaggio!1
-      </button>
+                <Link href="./MyPlannedTrips">Inizia il tuo nuovo viaggio!1</Link>
+            </Button>
         </div>
     );
 };

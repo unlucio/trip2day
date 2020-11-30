@@ -1,5 +1,5 @@
 import { Nav, Table } from "react-bootstrap";
-import TopNavbar from "./TopNavbar";
+import TopNavbar from "./component/TopNavbar";
 
 function DailyPlanner() {
   return (
