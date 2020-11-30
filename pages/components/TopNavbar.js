@@ -24,12 +24,12 @@ export default function TopNavbar() {
           {!session && (
             <>
               <p>Not signed in</p>
-              <button onClick={() => signIn("facebook", { callbackUrl: "http://localhost:3000/MyTravelBook" })
+              <button onClick={() => signIn("facebook", { callbackUrl: "http://localhost:3000/MyTrips" })
               }> Sign in </button></>)}
           {session && (
             <>
               <p>Signed in as {session.user.name}!</p>
-              <button onClick={() => signOut({ callbackUrl: "http://localhost:3000" })
+              <button className='ButtonNavbar' onClick={() => signOut({ callbackUrl: "http://localhost:3000" })
               }> Sign out </button></>)}
         </Navbar>
       </Navbar.Collapse>

@@ -1,38 +1,31 @@
-import { Button, ButtonGroup, Card } from "react-bootstrap";
+import { Button, ButtonGroup, Card, Container, Row } from "react-bootstrap";
 import TopNavbar from "./components/TopNavbar";
 import Header from './components/Header'
 import Link from "next/link";
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { CardViaggioList } from './listCardViaggio'
-import {AddCardViaggio} from './addCardViaggio.js'
+import { AddCardViaggio } from './addCardViaggio.js'
 
 
 function MyPlannedTrips() {
-  const [list, setList] = useState([]);
-  const trip = {
-    id: "Tokyo",
-    location: "Tokyo",
-    photo: "/Tokyo.jpg"
-  }
+  const [cardList, setList] = useState([]);
 
+  useEffect(() => {
+    fetch("http://localhost:3001/").then((response) => {
+      response.json().then((content) => {
+        setList([...content.cardViaggio]);
+      });
+    });
+  }, []);
   const [value, setValue] = useState('')
 
   function handleChange(event) {
     setValue(event.target.value);
   }
 
-  const [cardViaggio, setcardViaggio] = useState([trip])
-
-  function addCard() {
-    const cardList = cardViaggio.slice();
-    const newCardViaggio = trip;
-    cardList.push(newCardViaggio);
-    setcardViaggio(cardList);
-  }
-
   function renderCard() {
-    return cardViaggio.map((cardViaggio, index) => {
-      const { location, photo } = cardViaggio
+    return cardList.map((cardList, index) => {
+      const { location, photo } = cardList
       return (<Card className="photo" key={index}>
         <Card.Img variant="top" /><img src={photo} width="200px" overflow="hidden"></img>
         <Card.Body>
@@ -45,10 +38,10 @@ function MyPlannedTrips() {
       )
     })
   }
-  function chooseLocation() {
 
+  const trip = {
+    id: "Parigi"
   }
-  console.log(value);
 
   return (
     <div>
@@ -65,50 +58,44 @@ function MyPlannedTrips() {
         </Button>
       </ButtonGroup>
 
-      <div className="flexcontainer">
-        <form id="input" onSubmit={chooseLocation}>
-          <label>choose location</label>
-          <input type="text" placeholder="la 1 la 2 o la 3" value={value} onChange={handleChange} />
-          <input type="submit" value="Viaggia!"></input>
-        </form>
+      <Container>
 
-        <button onClick={addCard}>Aggiungi viaggio</button>
-        <div>{renderCard()}</div>
+        <Row>
+          <Card className="photo">
 
-        <Card className="photo">
+            <Card.Img variant="top" /><img src="/Tokyo.jpg" width="200px" overflow="hidden"></img>
+            <Card.Body>
+              <Card.Title>Plan your next trip</Card.Title>
+              <Card.Text>
 
-          <Card.Img variant="top" /><img src="/Tokyo.jpg" width="200px" overflow="hidden"></img>
-          <Card.Body>
-            <Card.Title>Tokyo</Card.Title>
-            <Card.Text>
+              </Card.Text>
+              <Button onChange={handleChange}><Link href="./NewTrip">+</Link></Button>
+            </Card.Body>
+          </Card>
+          <div>{renderCard()}</div>
+          <Card style={{ width: "18rem" }}>
+            <Card.Img variant="top" /><img src="/Parigi.jpg" width="200px" overflow="hidden"></img>
+            <Card.Body>
+              <Card.Title><Link href="/trips/[id]" as={`/trips/${trip.id}`}><a>{trip.id}</a></Link></Card.Title>
+              <Card.Text>
 
-            </Card.Text>
-            <Button><Link href="./NewTrip">Cross</Link></Button>
-          </Card.Body>
-        </Card>
+              </Card.Text>
+              <Button variant="primary">Go somewhere</Button>
+            </Card.Body>
+          </Card>
 
-        <Card style={{ width: "18rem" }}>
-          <Card.Img variant="top" /><img src="/Parigi.jpg" width="200px" overflow="hidden"></img>
-          <Card.Body>
-            <Card.Title>Parigi</Card.Title>
-            <Card.Text>
+          <Card style={{ width: "18rem" }}>
+            <Card.Img variant="top" /><img src="/Formentera.jpg" width="200px" overflow="hidden"></img>
+            <Card.Body>
+              <Card.Title>Formentera</Card.Title>
+              <Card.Text>
 
-            </Card.Text>
-            <Button variant="primary">Go somewhere</Button>
-          </Card.Body>
-        </Card>
-
-        <Card style={{ width: "18rem" }}>
-          <Card.Img variant="top" /><img src="/Formentera.jpg" width="200px" overflow="hidden"></img>
-          <Card.Body>
-            <Card.Title>Formentera</Card.Title>
-            <Card.Text>
-
-            </Card.Text>
-            <Button variant="primary">Go somewhere</Button>
-          </Card.Body>
-        </Card>
-      </div>
+              </Card.Text>
+              <Button variant="primary">Go somewhere</Button>
+            </Card.Body>
+          </Card>
+        </Row>
+      </Container>
 
     </div>
   );
