@@ -38,10 +38,10 @@ function MyPlannedTrips() {
       )
     })
   }
-  function chooseLocation() {
 
+  const trip = {
+    id: "Parigi"
   }
-  console.log(value);
 
   return (
     <div>
@@ -76,7 +76,7 @@ function MyPlannedTrips() {
           <Card style={{ width: "18rem" }}>
             <Card.Img variant="top" /><img src="/Parigi.jpg" width="200px" overflow="hidden"></img>
             <Card.Body>
-              <Card.Title>Parigi</Card.Title>
+              <Card.Title><Link href="/trips/[id]" as={`/trips/${trip.id}`}><a>{trip.id}</a></Link></Card.Title>
               <Card.Text>
 
               </Card.Text>
