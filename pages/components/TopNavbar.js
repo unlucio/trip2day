@@ -29,7 +29,7 @@ export default function TopNavbar() {
           {session && (
             <>
               <p>Signed in as {session.user.name}!</p>
-              <button onClick={() => signOut({ callbackUrl: "http://localhost:3000" })
+              <button className='ButtonNavbar' onClick={() => signOut({ callbackUrl: "http://localhost:3000" })
               }> Sign out </button></>)}
         </Navbar>
       </Navbar.Collapse>

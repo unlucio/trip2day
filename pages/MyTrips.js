@@ -8,15 +8,7 @@ function MyTrips() {
     <div>
       <TopNavbar />
       <Header />
-      <h1>Ciao, sono l'elenco dei tuoi viaggi</h1>
-      <ButtonGroup aria-label="Basic example">
-        <Button variant="secondary">My Trips</Button>
-        <Button variant="secondary">
-          <Link href="./MyPlannedTrips">My Planned Trips</Link>
-        </Button> <Button variant="secondary">
-          <Link href="./MyPhotos">My Photos</Link>
-        </Button>
-      </ButtonGroup>
+      {/* <h1>Ciao, sono l'elenco dei tuoi viaggi</h1> */}
     </div>
   );
 }
